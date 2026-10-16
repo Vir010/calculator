@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Калькулятор стоимости ремонта квартиры: тип работ, площадь, срочность, выезд мастера.">
+  <title>Калькулятор ремонта квартиры</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Remont<span>Calc</span></a>
+      <p class="header__caption">Калькулятор стоимости</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="calc">
+      <div class="container calc__inner">
+        <div class="calc__intro">
+          <h1 class="calc__title">Рассчитайте стоимость ремонта</h1>
+          <p class="calc__lead">
+            Укажите параметры — калькулятор посчитает итоговую стоимость
+            и покажет, из чего она сложилась.
+          </p>
+        </div>
+
+        <div class="calc__grid">
+          <form class="form" id="calcForm" novalidate>
+            <div class="form__field">
+              <label for="service">Тип работ</label>
+              <select id="service" name="service">
+                <option value="cosmetic" data-rate="3500">Косметический ремонт — 3 500 ₽/м²</option>
+                <option value="capital" data-rate="6800">Капитальный ремонт — 6 800 ₽/м²</option>
+                <option value="design" data-rate="9500">Ремонт под дизайн-проект — 9 500 ₽/м²</option>
+              </select>
+            </div>
+
+            <div class="form__field">
+              <label for="area">Площадь, м²</label>
+              <input type="number" id="area" name="area" min="1" max="500" value="40">
+              <span class="form__error" data-error-for="area"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="urgency">Срочность</label>
+              <select id="urgency" name="urgency">
+                <option value="1">Стандартные сроки</option>
+                <option value="1.5">Срочно (в течение недели) — ×1.5</option>
+                <option value="2">Экспресс (за 3 дня) — ×2</option>
+              </select>
+            </div>
+
+            <div class="form__field form__field--row">
+              <input type="checkbox" id="visit" name="visit">
+              <label for="visit">Выезд мастера для замера — + 500 ₽</label>
+            </div>
+
+            <button type="submit" class="btn">Рассчитать</button>
+          </form>
+
+          <aside class="result" id="result" aria-live="polite">
+            <p class="result__caption">Итоговая стоимость</p>
+            <p class="result__total" id="resultTotal">—</p>
+
+            <ul class="result__breakdown" id="resultBreakdown">
+              <li class="result__empty">Заполните форму и нажмите «Рассчитать».</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">© 2026 RemontCalc. Демо-калькулятор.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
