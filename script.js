@@ -1,3 +1,10 @@
+if (typeof AOS !== "undefined") {
+  AOS.init({
+    duration: 600,
+    once: true,
+  });
+}
+
 const form = document.getElementById("calcForm");
 const resultTotal = document.getElementById("resultTotal");
 const resultBreakdown = document.getElementById("resultBreakdown");

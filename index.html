@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Калькулятор стоимости ремонта квартиры: тип работ, площадь, срочность, выезд мастера.">
+  <meta name="description"
+    content="Калькулятор стоимости ремонта квартиры: тип работ, площадь, срочность, выезд мастера.">
   <title>Калькулятор ремонта квартиры</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
   <header class="header">
     <div class="container header__inner">
@@ -21,7 +31,7 @@
   <main>
     <section class="calc">
       <div class="container calc__inner">
-        <div class="calc__intro">
+        <div class="calc__intro" data-aos="fade-up">
           <h1 class="calc__title">Рассчитайте стоимость ремонта</h1>
           <p class="calc__lead">
             Укажите параметры — калькулятор посчитает итоговую стоимость
@@ -30,7 +40,7 @@
         </div>
 
         <div class="calc__grid">
-          <form class="form" id="calcForm" novalidate>
+          <form class="form" id="calcForm" novalidate data-aos="fade-up" data-aos-delay="100">
             <div class="form__field">
               <label for="service">Тип работ</label>
               <select id="service" name="service">
@@ -63,7 +73,7 @@
             <button type="submit" class="btn">Рассчитать</button>
           </form>
 
-          <aside class="result" id="result" aria-live="polite">
+          <aside class="result" id="result" aria-live="polite" data-aos="fade-up" data-aos-delay="200">
             <p class="result__caption">Итоговая стоимость</p>
             <p class="result__total" id="resultTotal">—</p>
 
@@ -81,7 +91,6 @@
       <p class="footer__copy">© 2026 RemontCalc. Демо-калькулятор.</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
